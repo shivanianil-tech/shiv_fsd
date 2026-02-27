@@ -1,83 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8">
-  <title>Student Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+
+<title>Digital Journal</title>
+
+<link rel="stylesheet" href="style.css">
+
 </head>
+
 <body>
 
-  <!-- Sidebar -->
-  <nav class="sidebar">
-    <h2>☕ My Dashboard</h2>
-    <a href="#" onclick="showSection('dashboard')">Dashboard</a>
-    <a href="#" onclick="showSection('planner')">Planner</a>
-    <a href="#" onclick="showSection('studentInfo')">Student Info</a>
-    <a href="#" onclick="showSection('settings')">Settings</a>
-  </nav>
+<h1>🌸 My Digital Journal 🌸</h1>
 
-  <!-- Main Content -->
-  <div class="main">
+<button class="darkBtn" onclick="toggleDark()">Toggle Dark Mode</button>
 
-    <!-- DASHBOARD -->
-    <section id="dashboard" class="content-section">
-      <header>
-        <h1>Dashboard</h1>
-        <p>Welcome back 👋 Stay productive today</p>
-      </header>
+<br><br>
 
-      <section class="cards">
-        <div class="card">Subjects<br><span id="subjectsCount">0</span></div>
-        <div class="card">Assignments<br><span id="assignmentsCount">0</span></div>
-        <div class="card">Attendance<br><span id="attendanceDisplay">0%</span></div>
-        <div class="card">Exams Left<br><span id="examsCount">0</span></div>
-        <div class="card">Tasks<br><span id="taskCount">0</span></div>
-      </section>
-    </section>
+<div class="form">
 
-    <!-- PLANNER -->
-    <section id="planner" class="content-section" style="display:none;">
-      <h2>📌 Daily Planner</h2>
+<input id="title" placeholder="Title">
 
-      <div class="todo-input">
-        <input type="text" id="taskInput" placeholder="Add today's task...">
-        <button onclick="addTask()">Add</button>
-      </div>
+<input id="date" type="date">
 
-      <ul id="taskList"></ul>
+<textarea id="content" placeholder="Write your thoughts..."></textarea>
 
-      <div class="notes">
-        <h3>📝 Daily Notes</h3>
-        <textarea id="dailyNotes" placeholder="Write your notes here..."></textarea>
-        <button onclick="saveNotes()">Save Notes</button>
-      </div>
-    </section>
+<button onclick="addEntry()">Save Entry</button>
 
-    <!-- STUDENT INFO -->
-    <section id="studentInfo" class="content-section" style="display:none;">
-      <h2>🎓 Student Information</h2>
+</div>
 
-      <div class="form-group">
-        <input type="number" id="subjects" placeholder="Number of subjects">
-        <input type="number" id="assignments" placeholder="Assignments pending">
-        <input type="number" id="exams" placeholder="Exams left">
-        <input type="number" id="attendance" placeholder="Attendance %">
-        <button onclick="saveStudentInfo()">Save Info</button>
-      </div>
-    </section>
+<br>
 
-    <!-- SETTINGS -->
-    <section id="settings" class="content-section" style="display:none;">
-      <h2>⚙️ Settings</h2>
+<input id="search" placeholder="Search entries..." onkeyup="searchEntry()">
 
-      <label class="toggle">
-        <input type="checkbox" id="darkToggle">
-        Enable Dark Coffee Mode
-      </label>
-    </section>
+<h3 id="count"></h3>
 
-  </div>
+<h2>My Entries</h2>
 
-  <script src="script.js"></script>
+<div id="entries"></div>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
